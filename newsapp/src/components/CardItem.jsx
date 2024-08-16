@@ -1,5 +1,9 @@
 export default function CardItem({ data, article }) {
-  if (article.title === "[Removed]") {
+  if (
+    article.title === "[Removed]" ||
+    article.urlToImage === "https://removed.com" ||
+    article.urlToImage === null
+  ) {
     return null;
   }
   return (
