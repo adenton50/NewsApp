@@ -2,22 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import USNews from "./pages/USNews.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "usnews",
-    element: <USNews />,
-  },
-]);
+const basename = "/NewsApp";
+
+const router = (
+  <Router basename={basename}>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="usnews" element={<USNews />} />
+    </Routes>
+  </Router>
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <React.StrictMode>{router}</React.StrictMode>
 );
