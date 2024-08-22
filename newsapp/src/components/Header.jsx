@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="p-10 shadow-lg">
-      <nav className="flex items-center justify-center">
-        <h1 className="text-5xl font-bold flex-1 text-blue-500">
+    <div className="py-10 shadow-lg md:px-10">
+      <nav className="flex items-center justify-center flex-col gap-4 md:flex-row">
+        <h1 className="text-2xl md:text-5xl font-bold flex-1 text-blue-500">
           📰 Adam's News Letter
         </h1>
         <div>

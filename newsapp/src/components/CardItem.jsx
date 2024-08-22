@@ -1,4 +1,4 @@
-export default function CardItem({ data, article }) {
+export default function CardItem({ data, article, index }) {
   if (
     article.title === "[Removed]" ||
     article.urlToImage === "https://removed.com" ||
@@ -7,7 +7,7 @@ export default function CardItem({ data, article }) {
     return null;
   }
   return (
-    <div>
+    <div key={index}>
       <div className="flex items-center justify-center flex-col">
         <img
           alt="Article"

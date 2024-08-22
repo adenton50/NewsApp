@@ -32,12 +32,14 @@ export default function USNews() {
   return (
     <div>
       <Header />
-      <h1 className="ml-8 mt-8 text-3xl">Top news stories in the US today:</h1>
-      <div className="grid grid-cols-4 gap-24 p-16 m-8">
+      <h1 className="ml-8 mt-8 text-2xl md:text-3xl">
+        Top news stories in the US today:
+      </h1>
+      <div className="grid md:grid-cols-4 gap-24 md:p-16 m-8">
         {data
           .filter((article) => article.title !== "[Removed]")
-          .map((article) => (
-            <div>
+          .map((article, index) => (
+            <div key={index}>
               <div className="flex items-center justify-center flex-col border-2 border-black rounded-3xl">
                 <img src={article.urlToImage} className="rounded-t-3xl"></img>
                 <div className="p-2 flex items-center justify-center flex-col gap-4 w-full ">
