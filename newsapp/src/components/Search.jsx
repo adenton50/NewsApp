@@ -14,7 +14,7 @@ export default function Search({ data, setData, setQuery }) {
 
       const json = await response.json();
       const news = json.articles;
-      console.log(news);
+      //console.log(news);
       setData(news);
       setQuery(inputQuery);
     } catch (error) {
