@@ -5,7 +5,7 @@ export default function Search({ data, setData, setQuery }) {
   async function getData(e) {
     e.preventDefault();
     const API_KEY = import.meta.env.VITE_API_KEY;
-    const URL = `https://newsapi.org/v2/everything?q=${inputQuery}&from=2024-08-21&sortBy=popularity&apiKey=${API_KEY}`;
+    const URL = `https://gnews.io/api/v4/search?q=${inputQuery}&lang=en&country=us&max=10&apikey=${API_KEY}`;
     try {
       const response = await fetch(URL);
       if (!response.ok) {
@@ -13,8 +13,8 @@ export default function Search({ data, setData, setQuery }) {
       }
 
       const json = await response.json();
-      const news = json.articles.slice(0, 25);
-      //console.log(news);
+      const news = json.articles;
+      console.log(news);
       setData(news);
       setQuery(inputQuery);
     } catch (error) {

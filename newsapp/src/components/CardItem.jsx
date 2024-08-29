@@ -9,11 +9,7 @@ export default function CardItem({ data, article, index }) {
   return (
     <div key={index}>
       <div className="flex items-center justify-center flex-col">
-        <img
-          alt="Article"
-          src={article.urlToImage}
-          className="rounded-t-3xl"
-        ></img>
+        <img alt="Article" src={article.image} className="rounded-t-3xl"></img>
         <div className="p-2 flex items-center justify-center flex-col gap-4 border-b border-r border-l border-black w-full rounded-b-3xl">
           <h3 className="text-center font-bold">{article.title}</h3>
           <p className="text-center italic font-medium">

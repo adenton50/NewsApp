@@ -7,7 +7,7 @@ export default function USNews() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const API_KEY = import.meta.env.VITE_API_KEY;
-  const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+  const URL = `https://gnews.io/api/v4/top-headlines?category=us&lang=en&country=us&max=10&apikey=${API_KEY}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +41,7 @@ export default function USNews() {
           .map((article, index) => (
             <div key={index}>
               <div className="flex items-center justify-center flex-col border-2 border-black rounded-3xl">
-                <img src={article.urlToImage} className="rounded-t-3xl"></img>
+                <img src={article.image} className="rounded-t-3xl"></img>
                 <div className="p-2 flex items-center justify-center flex-col gap-4 w-full ">
                   <h3 className="text-center font-bold">{article.title}</h3>
                   <p className="text-center italic font-medium">
